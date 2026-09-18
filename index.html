@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC — Vinnytsia</title>
+  <meta name="description" content="KFC Vinnytsia — fried chicken buckets, combos & sides. Dine-in, takeaway & delivery.">
+  <link rel="icon" href="assets/images/placeholder.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/storefront.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="hd-in">
+      <button id="burger" aria-label="menu">☰</button>
+      <a class="brand" id="brand" href="index.html" aria-label="home"></a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#products" data-i18n="nav.menu">المنيو</a>
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+        <a href="#location" data-i18n="nav.location">الموقع</a>
+        <a href="#contact" data-i18n="nav.contact">تواصل</a>
+        <a href="#" id="admin-link-m">⚙️ <span data-i18n="nav.admin">إدارة الموقع</span></a>
+      </nav>
+      <div class="hd-actions">
+        <div class="lang-sw" role="group" aria-label="language">
+          <button data-lang="ar">عربي</button><button data-lang="en">EN</button><button data-lang="fr">FR</button>
+        </div>
+        <button class="cart-btn" id="cart-btn">🛒 <span data-i18n="nav.cart">السلة</span><span id="cart-count" style="display:none">0</span></button>
+        <button class="cart-btn" id="admin-link" title="admin" style="background:rgba(255,255,255,.14)">⚙️</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="sections">
+    <div id="hero" class="hero" data-section="hero"></div>
+
+    <div id="info-strip" class="strip" data-section="info-strip"></div>
+
+    <section data-section="categories" id="categories">
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="search-box"><span>🔍</span><input id="search" data-i18n-ph="filter.search" placeholder="ابحث عن وجبتك…"></div>
+          <button id="clear-filters" data-i18n="filter.clear">مسح الفلترة</button>
+        </div>
+        <div class="pill-row" id="cat-pills"></div>
+      </div>
+    </section>
+
+    <section data-section="products" id="products">
+      <div class="wrap">
+        <h2 class="sec-title" data-i18n="products.title">المنيو والمنتجات</h2>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="products-empty" style="display:none">
+          <h3 data-i18n="products.empty">أضف منتجاتك من لوحة التحكم</h3>
+          <p class="muted" data-i18n="products.emptySub"></p>
+        </div>
+        <div class="empty-state" id="no-results" style="display:none">
+          <p data-i18n="filter.none"></p>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="about" id="about">
+      <div class="wrap">
+        <h2 class="sec-title" data-i18n="about.title">عن المطعم</h2>
+        <div id="about-body"></div>
+      </div>
+    </section>
+
+    <section data-section="reviews" id="reviews">
+      <div class="wrap">
+        <h2 class="sec-title" data-i18n="reviews.title">التقييم والمراجعات</h2>
+        <div id="reviews-body"></div>
+      </div>
+    </section>
+
+    <section data-section="location" id="location">
+      <div class="wrap">
+        <h2 class="sec-title" data-i18n="location.title">موقعنا</h2>
+        <p class="sec-sub" id="loc-address"></p>
+        <div class="loc-grid">
+          <div class="loc-card rv">
+            <h3 data-i18n="location.hours">ساعات العمل</h3>
+            <ul id="hours-list"></ul>
+            <a class="btn btn-ghost" id="maps-link" target="_blank" rel="noopener" href="#" data-i18n="location.open">فتح في خرائط جوجل</a>
+          </div>
+          <div id="map-frame" class="rv"></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="contact" id="contact">
+      <div class="wrap">
+        <h2 class="sec-title" data-i18n="contact.title">تواصل معنا</h2>
+        <div id="contact-body"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="foot-in">
+      <div class="foot-brand" id="foot-brand"></div>
+      <p id="foot-copy"></p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="cart">
+    <div class="cart-head"><h3 data-i18n="cart.title">سلة الطلب</h3><button class="x-btn" id="cart-close">✕</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-foot">
+      <div class="grand-row"><span data-i18n="cart.total">الإجمالي</span><span id="cart-total">0</span></div>
+      <button class="btn btn-primary btn-block" id="checkout-btn" data-i18n="cart.checkout">إتمام الطلب</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="modal-box"></div>
+
+  <script src="js/schema.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/media.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

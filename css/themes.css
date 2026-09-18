@@ -1,0 +1,8 @@
+/* Themes — presets + card variants (تُضبط من لوحة التحكم عبر CSS variables) */
+body[data-card="classic"] .card{border:2px solid var(--border)}
+body[data-card="classic"] .card-media img{border-radius:0}
+body[data-card="minimal"] .card{box-shadow:none;border:1px solid var(--border)}
+body[data-card="minimal"] .card:hover{box-shadow:var(--shadow)}
+body[data-card="minimal"] .badge{border-radius:6px}
+body[data-card="modern"] .card{border:1px solid var(--border)}
+.theme-note{background:color-mix(in srgb,var(--secondary) 16%,transparent);border:1px dashed var(--secondary)}

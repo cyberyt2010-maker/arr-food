@@ -1,0 +1,19 @@
+{
+  "_note_ar": "ملخص البيانات المستخرجة من لصقة Google Maps — مرجع توثيقي. المصدر الفعلي للتشغيل هو js/schema.js + localStorage",
+  "_note_en": "Summary of data extracted from the Google Maps paste. Runtime source is js/schema.js + localStorage",
+  "name": "KFC",
+  "rating": 4.6,
+  "reviewsCount": 443,
+  "priceRange": "200–400 ₴",
+  "type": "مطعم وجبات سريعة / Fast food restaurant",
+  "description_ar": "سلسلة مطاعم تشتهر بسطول الدجاج المقلي وأطباق الكومبو والأطباق الجانبية",
+  "address": "Pyrohova St, 47а, Vinnytsia, Vinnytsia Oblast, Ukraine, 21000",
+  "plusCode": "6CGX+JC Vinnytsia, Vinnytsia Oblast, Ukraine",
+  "phone": "+380 67 551 5759",
+  "website": "https://kfc.ua",
+  "orderUrl": "https://order.kfc.ua",
+  "hours_note": "يفتح الجمعة 9:00 ص — يغلق 10:00 م (قابلة للتعديل من لوحة التحكم)",
+  "features": ["الجلوس داخل المكان", "طعام سفري", "خدمة التوصيل"],
+  "dishes_found": ["Chicken buckets", "Combos", "Fries bucket (Бакет Картоплі Фрі)", "Pepsi Zero (Пепсі Нуль Цукру)", "Burger", "Tenders"],
+  "fieldsExtracted": 18
+}
